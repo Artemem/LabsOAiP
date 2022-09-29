@@ -1,12 +1,20 @@
 #include <stdio.h>
+int pair(float a, float b);
 int main()
 {
-	int k;
-	printf_s("Input number:");
-	scanf_s("%d", &k);
-	if (k % 2 == 1)
-		printf_s("%d is odd", k);
-	else
-		printf_s("%d is even", k);
-	return 0;
+    float a, b, c;
+    int sum;
+    printf("input three numbers a, b, c: ");
+    scanf_s("%f %f %f", &a, &b, &c);
+    sum = pair(a, b) + pair(a, c) + pair(b, c);
+    printf("result = %d\n", sum);
+    return 0;
+}
+
+int pair(float a, float b)
+{
+    if (a * b == 1)
+        return 1;
+    else
+        return 0;
 }
